@@ -19,7 +19,7 @@ const lato = Lato({
 });
 
 const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://peacebypiece.vercel.app";
+  process.env.NEXT_PUBLIC_SITE_URL ?? "peacebypieceor.vercel.app";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
