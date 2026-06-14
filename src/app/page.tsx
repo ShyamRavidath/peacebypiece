@@ -1,9 +1,21 @@
+import { Hero } from "@/components/home/hero";
+import {
+  Pillars,
+  MissionSplit,
+  LevelsBand,
+  ImpactTeaser,
+} from "@/components/home/sections";
+import { CtaBand } from "@/components/cta-band";
+
 export default function Home() {
   return (
-    <main className="flex min-h-screen items-center justify-center">
-      <p className="text-muted-foreground">
-        Clone target not yet built. Run <code className="font-mono text-foreground">/clone-website</code> to start.
-      </p>
-    </main>
+    <>
+      <Hero />
+      <Pillars />
+      <MissionSplit />
+      <LevelsBand />
+      <ImpactTeaser />
+      <CtaBand />
+    </>
   );
 }
