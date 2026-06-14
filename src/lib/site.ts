@@ -1,3 +1,17 @@
+/**
+ * Canonical site origin. Tolerates a NEXT_PUBLIC_SITE_URL that omits the
+ * scheme (e.g. Vercel domains pasted as "foo.vercel.app") or has a trailing
+ * slash — otherwise `new URL()` throws ERR_INVALID_URL at build time.
+ */
+function normalizeSiteUrl(raw?: string): string {
+  const fallback = "https://peacebypieceor.vercel.app";
+  let url = (raw ?? "").trim() || fallback;
+  if (!/^https?:\/\//i.test(url)) url = `https://${url}`;
+  return url.replace(/\/+$/, "");
+}
+
+export const SITE_URL = normalizeSiteUrl(process.env.NEXT_PUBLIC_SITE_URL);
+
 export const SITE = {
   name: "Peace by Piece",
   tagline: "Piecing Together the Systemic Education Gap",

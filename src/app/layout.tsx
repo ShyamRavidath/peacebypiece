@@ -3,6 +3,7 @@ import { Fraunces, Lato } from "next/font/google";
 import "./globals.css";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
+import { SITE_URL } from "@/lib/site";
 
 const fraunces = Fraunces({
   variable: "--font-fraunces",
@@ -17,9 +18,6 @@ const lato = Lato({
   weight: ["400", "700", "900"],
   display: "swap",
 });
-
-const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL ?? "peacebypieceor.vercel.app";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
